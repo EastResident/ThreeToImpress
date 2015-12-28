@@ -1,0 +1,22 @@
+div.col-md-4
+  =form_for(@user) do |f|
+    -if @user.errors.any?
+      div#error_explanation
+        h2 =pluralize(@user.errors.count, "error") + 'prohibited this user from being saved:'
+        ul
+        -@user.errors.full_messages.each do |message|
+          li =message
+    div.form-group
+      =f.label :email, "メールアドレス"
+      br
+      =f.text_field :email, class: "form-control"
+    div.form-group
+      =f.label :password, "パスワード"
+      br
+      =f.text_field :password, class: "form-control"
+    div.form-group
+      =f.label :password_confirmation, "パスワード(確認)"
+      br
+      =f.text_field :password_confirmation, class: "form-control"
+    div.form-group
+      =f.submit "登録", class: "btn btn-defalut"

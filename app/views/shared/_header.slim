@@ -1,0 +1,15 @@
+nav class="nav navbar-default"
+  ul class="nav navbar-nav"
+    -if current_user
+      li
+    	  =link_to "Edit Profile", edit_user_path(current_user.id)
+      li
+    	  =link_to "ログアウト", :logout, method: :post
+    -else
+      li
+    	  =link_to "登録", new_user_path
+      li
+    	  = link_to "ログイン", :login
+div
+  p#notice =flash[:notice]
+  p#alert =flash[:alert]
