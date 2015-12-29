@@ -60,5 +60,5 @@ gem 'rails-i18n', '~> 4.0.1'
 gem 'slim-rails'
 gem 'carrierwave'
 gem 'sorcery'
-
+gem 'remotipart'
 gem 'threejs-rails'

@@ -1,2 +1,9 @@
-h1 create
 =javascript_include_tag 'exe', 'data-turbolinks-track' => true
+
+
+=form_for(@new_slide, remote: true) do |f|
+  div.form-group
+    =f.label :file, "画像アップロード"
+    =f.file_field :file
+  div.form-group
+    =f.submit "送信", class: "btn btn-primary"

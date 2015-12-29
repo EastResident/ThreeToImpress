@@ -19,3 +19,5 @@
 //= require slides
 //= require three.min
 //= require OrbitControls
+//= require jquery.remotipart
+//= require bootstrap-filestyle

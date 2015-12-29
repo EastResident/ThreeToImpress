@@ -1,0 +1,8 @@
+nav class="nav navbar-default navbar-fixed-bottom"
+  =form_for(@new_slide, :html => {:multipart => true}, remote: true, class: "form-inline") do |f|
+    div.container
+      div.row
+        div.col-md-3
+          =f.file_field :file, class: 'filestyle', "data-buttonText" => "choose image", "data-icon" => false, "data-buttonBefore" => true, "data-size" => "sm"
+        div.col-md-1
+          =f.submit "送信", class: "btn btn-primary"
