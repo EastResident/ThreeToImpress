@@ -2,14 +2,15 @@ class window.Three_app
 	constructor: ->
 		@scene = new THREE.Scene()
 		# THREE.PerspectiveCamera(画角, 縦横比, クリッピング手前, クリッピング奥)
-		@camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+		@camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000)
 		# カメラの位置を設定
-		@camera.position.z = 5
+		@camera.position.z = 10
 		# OrbitControls用の処理
 		@controls = new THREE.OrbitControls(@camera)
 
 		@renderer = new THREE.WebGLRenderer()
 		@renderer.setSize( window.innerWidth, window.innerHeight )
+		@renderer.setClearColor(0xeeeeee, 1);
 
 		@geometry = new THREE.BoxGeometry( 1, 1, 1 )
 		@material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } )
@@ -20,8 +21,6 @@ class window.Three_app
 		# @directionalLight = new THREE.DirectionalLight( 0xffffff, 3 )
 		# @directionalLight.position.z = 3
 		# @scene.add( @directionalLight )
-
-
 
 	# 描画領域を生成
 	readbody: ->
