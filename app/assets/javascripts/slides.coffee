@@ -26,3 +26,4 @@ class window.Three_app
 	# 描画領域を生成
 	readbody: ->
 		document.body.appendChild( @renderer.domElement )
+
