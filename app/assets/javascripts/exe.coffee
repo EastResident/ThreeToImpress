@@ -1,16 +1,16 @@
-# slide_object = []
-slide_count = 0
+@slide_object = []
+@slide_count = 0
 
 t = new Three_app
 t.readbody()
 
-@arrangement = ->
-	positionx = 0
-	positiony = 0
-	positionz = 0
-	path = window.image_path
-	width = window.image_width / 100
-	height = window.image_height / 100
+@arrangement = (slide_object) ->
+	positionx = slide_object.image_pos_x / 100
+	positiony = slide_object.image_pos_y / 100
+	positionz = slide_object.image_pos_z / 100
+	path = slide_object.image_path
+	width = slide_object.image_width / 100
+	height = slide_object.image_height / 100
 
 	geometry = new THREE.BoxGeometry(width, height, 0)
 	image_texture = new THREE.ImageUtils.loadTexture(path)

@@ -1,5 +1,18 @@
-window.image_path = "<%= @now_slide %>";
-window.image_width = "<%= @image_width %>";
-window.image_height = "<%= @image_height %>";
+// コントローラーから受け取った値を一旦ハッシュに格納
+var slide_info = {
+	image_path: "<%= @image_path %>",
+	image_pos_x: "<%= @image_pos_x %>",
+	image_pos_y: "<%= @image_pos_y %>",
+	image_pos_z: "<%= @image_pos_z %>",
+	image_height: "<%= @image_height %>",
+	image_width: "<%= @image_width %>"
+}
 
-arrangement();
+// スライドごとの情報を格納するオブジェクトを作成
+slide_object[slide_count] = new SlideObject(slide_info);
+
+// sceneに先ほど作成したスライドオブジェクトをステージする
+arrangement(slide_object[slide_count]);
+
+
+slide_count += 1;

@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151225044534) do
+ActiveRecord::Schema.define(version: 20160109103500) do
 
   create_table "slides", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
+    t.float    "position_x"
+    t.float    "position_y"
+    t.float    "position_z"
   end
 
   create_table "users", force: :cascade do |t|
