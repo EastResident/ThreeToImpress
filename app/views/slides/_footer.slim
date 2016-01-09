@@ -3,7 +3,8 @@ nav class="nav navbar-default navbar-fixed-bottom"
     div.container
       div.row
         div.col-md-3
-          =f.file_field :file, class: 'filestyle', "data-buttonText" => "choose image", "data-icon" => false, "data-buttonBefore" => true, "data-size" => "sm"
+          / # =f.file_field :file, class: 'filestyle', "data-buttonText" => "choose image", "data-icon" => false, "data-buttonBefore" => true, "data-size" => "sm"
+          =f.file_field :file
         div.col-md-1
           =f.text_field :position_x, class: "form-control"
         div.col-md-1
@@ -15,4 +16,4 @@ nav class="nav navbar-default navbar-fixed-bottom"
 
   / <input type="button" name="" value="配置" class="btn btn-large btn-primary" onclick="arrangement()">
   /
-  / # =link_to("say", "javascript:void(0)", onClick: "arrangement()")
+  / # =link_to("say", "javascript:void(0)", onClick: "reset()")
