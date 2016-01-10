@@ -1,4 +1,5 @@
 @slide_object = []
+@three_object = []
 @slide_count = 0
 
 t = new Three_app
@@ -15,10 +16,10 @@ t.readbody()
 	geometry = new THREE.BoxGeometry(width, height, 0)
 	image_texture = new THREE.ImageUtils.loadTexture(path)
 	material = new THREE.MeshBasicMaterial({map: image_texture})
-	slide_object = new THREE.Mesh(geometry, material)
-	slide_object.castShadow = true
-	slide_object.position.set(positionx,positiony,positionz)
-	t.scene.add(slide_object)
+	@three_object[@slide_count] = new THREE.Mesh(geometry, material)
+	@three_object[@slide_count].castShadow = true
+	@three_object[@slide_count].position.set(positionx,positiony,positionz)
+	t.scene.add(@three_object[@slide_count])
 
 # 描画ループ
 renderloop = ->
