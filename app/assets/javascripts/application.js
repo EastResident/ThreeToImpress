@@ -19,5 +19,7 @@
 //= require slides
 //= require three.min
 //= require OrbitControls
+//= require TransformControls
+//= require Projector
 //= require jquery.remotipart
 //= require bootstrap-filestyle

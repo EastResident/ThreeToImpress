@@ -20,11 +20,15 @@ class window.Three_app
 		@renderer.setClearColor(0xeeeeee, 1);
 		# OrbitControls用の処理
 		@controls = new THREE.OrbitControls(@camera,@renderer.domElement)
-
 		@geometry = new THREE.BoxGeometry( 1, 1, 1 )
 		@material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } )
 		@cube = new THREE.Mesh( @geometry, @material )
 		@scene.add( @cube )
+		# TransformControlsの初期化
+		@transctrl = new THREE.TransformControls(@camera, @renderer.domElement)
+		@transctrl.setSpace('local')
+		@scene.add(@transctrl)
+		@transctrl.setMode("translate")
 
 		# 光源の追加
 		# @directionalLight = new THREE.DirectionalLight( 0xffffff, 3 )
@@ -34,4 +38,3 @@ class window.Three_app
 	# 描画領域を生成
 	readbody: ->
 		document.body.appendChild( @renderer.domElement )
-
