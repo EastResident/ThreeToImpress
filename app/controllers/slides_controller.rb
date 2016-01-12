@@ -1,3 +1,7 @@
+require 'fileutils'
+require 'zip'
+
+
 class SlidesController < ApplicationController
 	# protect_from_forgery except: :create
 
@@ -31,6 +35,30 @@ class SlidesController < ApplicationController
 		@user = User.find(current_user.id)
 		read_image(@user) if @user.slides.count.to_i > 0
 		render layout: false
+	end
+
+	def write_html
+		html_text = params.require(:html_text)
+		@image_paths = params.require(:image_path).split(",")
+		open("public/outputfiles/write.html","w"){|f|
+			f.write html_text
+		}
+
+		@image_paths.each_with_index do |image_path, id|
+			image_type = image_path[image_path.index('.')..-1]
+		  FileUtils.cp 'public' + image_path, "public/outputfiles/fig#{id + 1}#{image_type}"
+		end
+
+		zip = ZipFileGenerator.new('public/outputfiles', 'public/outputfiles.zip')
+		File.delete 'public/outputfiles.zip' if File.exist?('public/outputfiles.zip')
+		zip.write
+		# send_file('public/outputfiles.zip',filename: "impress.zip")
+		render layout: false
+	end
+
+	def hoge
+		send_file('public/outputfiles.zip',type: 'zip',disposition: 'attachment',filename: "impress.zip",status: 200)
+
 	end
 
 end
