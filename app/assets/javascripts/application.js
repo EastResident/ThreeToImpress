@@ -16,10 +16,10 @@
 
 //= require bootstrap
 //= require npm
-//= require slides
-//= require three.min
+//= require three
 //= require OrbitControls
 //= require TransformControls
 //= require Projector
 //= require jquery.remotipart
 //= require bootstrap-filestyle
+//= require slides
