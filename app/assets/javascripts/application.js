@@ -23,3 +23,4 @@
 //= require jquery.remotipart
 //= require bootstrap-filestyle
 //= require slides
+//= require sample
