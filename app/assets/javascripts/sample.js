@@ -1,3 +1,3 @@
-function sample(){
+sample = function(){
 	alert("hello");
-}
+};
