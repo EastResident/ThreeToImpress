@@ -56,9 +56,8 @@ class SlidesController < ApplicationController
 		render layout: false
 	end
 
-	def hoge
+	def download
 		send_file('public/outputfiles.zip',type: 'zip',disposition: 'attachment',filename: "impress.zip",status: 200)
-
 	end
 
 end

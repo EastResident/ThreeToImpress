@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get 'login' => 'user_sessions#new', :as => :login
 	post 'logout' => 'user_sessions#destroy', :as => :logout
   post 'write_html' => 'slides#write_html'
-  post 'slides/hoge' => 'slides#hoge'
+  post 'slides/download' => 'slides#download'
 
 end
